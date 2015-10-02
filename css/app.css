@@ -1,6 +1,6 @@
 @import "normalize.css";
 
-body, html {
+body, html, #root {
   width: 100%;
   height: 100%;
 }
@@ -40,7 +40,7 @@ h1 {
 h2 {
   font-size: 48px;
   font-weight: 100;
-}33
+}
 
 h3 {
   font-size: 24px;
@@ -159,6 +159,11 @@ a {
   align-items: center;
 
   background: #fff;
+}
+
+.product__img-wrapper {
+  min-height: 140px;
+  width: 100%;
 }
 
 .product__img {
