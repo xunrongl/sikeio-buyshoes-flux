@@ -264,6 +264,7 @@ a {
 
 .cart-item__top-part__middle {
   flex-grow: 1;
+  flex-basis: 0;
   margin-left: 20px;
 }
 
