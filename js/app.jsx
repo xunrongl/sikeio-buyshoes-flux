@@ -164,6 +164,7 @@ let Cart = React.createClass({
 
 let CartItem = React.createClass({
   render: function() {
+    let {item} = this.props;
     let {id,quantity} = this.props.item;
     let {price,imagePath,name} = products[id];
 
@@ -192,12 +193,31 @@ let CartItem = React.createClass({
         </div> {/* cart-item__top-part */}
 
         <div className="cart-item__qty">
-          <div className="adjust-qty">
-            <a className="adjust-qty__button">-</a>
-            <div className="adjust-qty__number">{quantity}</div>
-            <a className="adjust-qty__button">+</a>
-          </div>
+          <QuantityControl item={item}/>
         </div>
+
+
+
+      </div>
+    );
+  }
+});
+
+let QuantityControl = React.createClass({
+  render() {
+    let {variant} = this.props;
+    let {quantity} = this.props.item;
+
+    let className = "adjust-qty";
+    if(variant === "dark") {
+      className = "adjust-qty adjust-qty--dark";
+    }
+
+    return (
+      <div className={className}>
+        <a className="adjust-qty__button">-</a>
+        <div className="adjust-qty__number">{quantity}</div>
+        <a className="adjust-qty__button">+</a>
       </div>
     );
   }
@@ -258,7 +278,7 @@ let Product = React.createClass({
     if(item != null) {
       let {quantity} = item;
       productControl = (
-        <div>{quantity}</div>
+        <QuantityControl item={item} variant="dark"/>
       );
 
     } else {
@@ -277,7 +297,9 @@ let Product = React.createClass({
             <img className="product__img" src={imagePath} />
           </div>
 
-          {productControl}
+          <div className="product__control">
+            {productControl}
+          </div>
 
           <div className="product__price">
             {"$"+price}
