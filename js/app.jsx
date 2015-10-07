@@ -209,8 +209,8 @@ let QuantityControl = React.createClass({
     let {quantity} = this.props.item;
 
     let className = "adjust-qty";
-    if(variant === "dark") {
-      className = "adjust-qty adjust-qty--dark";
+    if(variant === "gray") {
+      className = "adjust-qty adjust-qty--gray";
     }
 
     return (
@@ -278,7 +278,7 @@ let Product = React.createClass({
     if(item != null) {
       let {quantity} = item;
       productControl = (
-        <QuantityControl item={item} variant="dark"/>
+        <QuantityControl item={item} variant="gray"/>
       );
 
     } else {
