@@ -1,3 +1,6 @@
+const Ps = require("../node_modules/perfect-scrollbar/index");
+const React = require("../node_modules/react/react");
+
 let cartItems = {
   "jameson-vulc": {
     id: "jameson-vulc",

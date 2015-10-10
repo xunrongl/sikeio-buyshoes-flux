@@ -10,11 +10,11 @@ css:
 .PHONY: js
 js:
 	mkdir -p bundle
-	babel --watch js/app.jsx  -o build/app.js
+	browserify -t babelify js/app.jsx -o build/app.js
 
 .PHONY: server
 server:
-	browser-sync start --server --files='index.html,bundle/app.css,build/app.js'
+	browser-sync start --server --files='index.html,bundle/app.css,bundle/app.js'
 
 
 .PHONY: clean
