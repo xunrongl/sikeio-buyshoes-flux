@@ -9,12 +9,12 @@ css:
 
 .PHONY: js
 js:
-	mkdir -p bundle
-	browserify -t babelify js/app.jsx -o build/app.js
+	mkdir -p build
+	watchify -t babelify js/app.jsx -o build/app.js
 
 .PHONY: server
 server:
-	browser-sync start --server --files='index.html,bundle/app.css,bundle/app.js'
+	browser-sync start --server --files='index.html,bundle/app.css,build/app.js'
 
 
 .PHONY: clean
