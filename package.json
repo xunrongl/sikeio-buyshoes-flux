@@ -10,8 +10,9 @@
   "license": "MIT",
   "dependencies": {
     "normalize.css": "^3.0.3",
-    "react": "^0.13.3",
-    "perfect-scrollbar": "^0.6.4"
+    "perfect-scrollbar": "^0.6.4",
+    "react": "^0.14.0",
+    "react-dom": "^0.14.0"
   },
   "devDependencies": {
     "autoprefixer": "^6.0.2",

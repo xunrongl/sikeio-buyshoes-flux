@@ -6,7 +6,9 @@ const QuantityControl = require("./QuantityControl");
 
 let Cart = React.createClass({
   componentDidMount() {
-    let $content = React.findDOMNode(this.refs.content);
+    CartStore.addChangeListener(this.forceUpdate.bind(this));
+
+    let {$content} = this.refs;
     Ps.initialize($content);
   },
 
@@ -22,7 +24,7 @@ let Cart = React.createClass({
     return (
       <div className="cart">
         <h3 className="cart__title">Shopping Cart</h3>
-        <div ref="content" className="cart__content">
+        <div ref="$content" className="cart__content">
           <h3 className="cart__title cart__title--spacer">Shopping Cart</h3>
 
           {this.renderCartItems()}
