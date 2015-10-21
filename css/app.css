@@ -55,6 +55,10 @@ a {
   font-weight: 400;
 }
 
+a:hover {
+ cursor:pointer;
+}
+
 /*a:hover {
   font-weight: 400;
   color: #DADADA;
@@ -133,6 +137,32 @@ a {
   background-size: cover;
   background-position: center;
 }
+
+.notifications {
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  z-index: 30;
+}
+
+.notifications__item {
+  color: white;
+  padding: 10px;
+
+  background: rgba(255,0,0,0.8);
+}
+
+.notifications__item a {
+  align-self: flex-start;
+  text-decoration: underline;
+}
+
+.notifications__item__dismiss {
+  position: absolute;
+  right: 0; top: 0; bottom: 0;
+  justify-content: center;
+  padding: 10px;
+}
+
 
 
 .products {
@@ -237,6 +267,14 @@ a {
   z-index: 20;
 
   background: linear-gradient(rgba(192,207,221,1),rgba(192,207,221,0.7));
+}
+
+.cart__undo {
+  position: absolute;
+  top: 0; right: 0;
+  padding: 15px 0;
+  justify-content: center;
+  z-index: 20;
 }
 
 .cart:after {
